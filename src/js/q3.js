@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal');
  */
 const openModalButton = document.querySelector('.openModalButton');
 openModalButton.addEventListener('click', (event) => {
+  console.log('モーダルボタンがクリックされました。');
   modal.classList.remove('hide');
   modal.classList.add('show');
 });
@@ -16,6 +17,7 @@ const closeModalButton = document.querySelector(
   '.closeModalButton'
 );
 closeModalButton.addEventListener('click', (event) => {
+  console.log('モーダルを閉じるボタンがクリックされました。');
   modal.classList.remove('show');
   modal.classList.add('hide');
 });
@@ -23,10 +25,11 @@ closeModalButton.addEventListener('click', (event) => {
 /*
  * modal以外をクリックしたときの示非表示処理
  */
-modal.addEventListener('click', (evemt) => {
+modal.addEventListener('click', (event) => {
   if(event.target.closest('.modal__container') === null) {
     modal.classList.remove('show');
     modal.classList.add('hide');
     // alert('外側をクリックされました。') ← こちらもやってみるとおもろいです！！
+    alert('外側をクリックされました。');
   }
 });
